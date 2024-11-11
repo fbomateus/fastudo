@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useNotification } from '../../context/NotificationProvider';
 
 const ReviewsContainer = styled.div`
   margin-top: 20px;
@@ -58,8 +59,24 @@ const ReviewsTab = ({ reviews }) => {
   const [newReview, setNewReview] = useState('');
   const [starRating, setStarRating] = useState(0);
   const [allReviews, setAllReviews] = useState(reviews);
+  const showNotification = useNotification();
 
   const handleSubmit = () => {
+    if (!newReview.trim()) {
+      showNotification('Por favor, escreva sua avaliação antes de enviar.');
+      return;
+    }
+
+    if (newReview.trim().length < 3) {
+      showNotification('A avaliação deve ter pelo menos 3 caracteres.');
+      return;
+    }
+
+    if (starRating === 0) {
+      showNotification('Por favor, selecione pelo menos uma estrela.');
+      return;
+    }
+
     const newReviewObj = {
       text: newReview,
       rating: starRating,
