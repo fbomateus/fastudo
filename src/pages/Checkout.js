@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useCart } from '../features/Cart/CartContext';
 import { useNavigate } from 'react-router-dom';
@@ -37,7 +37,7 @@ const Summary = styled.div`
   }
 `;
 
-const CartItemContainer  = styled.div`
+const CartItemContainer = styled.div`
   margin: 20px 0;
 `;
 
@@ -78,6 +78,7 @@ const Checkout = () => {
   const { cartItems, clearCart } = useCart();
   const navigate = useNavigate();
   const showNotification = useNotification();
+  const formRef = useRef(null);
 
   useEffect(() => {
     if (cartItems.length === 0) {
@@ -88,22 +89,30 @@ const Checkout = () => {
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   const handlePayment = () => {
-    clearCart();
-    showNotification('Compra realizada com sucesso!');
-    navigate('/');
+    // Verifica se todos os campos obrigatórios estão preenchidos
+    if (formRef.current.checkValidity()) {
+      clearCart();
+      showNotification('Compra realizada com sucesso!');
+      navigate('/');
+    } else {
+      showNotification('Por favor, preencha todos os campos obrigatórios.');
+      formRef.current.reportValidity();
+    }
   };
 
   return (
     <CheckoutContainer>
       <BillingDetails>
         <h3>Detalhes de Pagamento</h3>
-        <BillingFields>
-          <Input name="name" placeholder="Nome" />
-          <Input name="email" placeholder="Email" />
-          <Input name="phone" placeholder="Telefone" />
-          <Input name="zip" placeholder="CEP" />
-          <Input name="address" placeholder="Endereço" />
-        </BillingFields>
+        <form ref={formRef}>
+          <BillingFields>
+            <Input name="name" placeholder="Nome*" type="text" required />
+            <Input name="email" placeholder="Email*" type="email" required />
+            <Input name="phone" placeholder="Telefone*" type="tel" required />
+            <Input name="zip" placeholder="CEP*" type="text" required />
+            <Input name="address" placeholder="Endereço*" type="text" required />
+          </BillingFields>
+        </form>
       </BillingDetails>
 
       <Summary>
