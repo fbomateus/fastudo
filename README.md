@@ -1,70 +1,163 @@
-# Getting Started with Create React App
+# Fastudo - Pedidos Online
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Fastudo é um site de pedidos de restaurantes que permite aos usuários visualizar diferentes restaurantes, seus menus, adicionar itens ao carrinho, e realizar pedidos. Este projeto é construído usando as tecnologias modernas de desenvolvimento web para proporcionar uma ótima experiência ao usuário, tanto em dispositivos móveis quanto em desktop.
 
-## Available Scripts
+## Visão Geral
 
-In the project directory, you can run:
+- **Nome do Projeto**: Fastudo
+- **Descrição**: Um site de pedidos online que permite aos usuários visualizar restaurantes, explorar seus menus, adicionar itens ao carrinho, e concluir pedidos.
+- **Tecnologias Utilizadas**: React, Styled-components, Context API, React Router
 
-### `npm start`
+## Características
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Listagem de Restaurantes**: Apresenta uma lista de restaurantes com categorias para fácil navegação.
+- **Detalhes do Restaurante**: Cada restaurante possui uma página detalhada com informações sobre o menu, resenhas e detalhes sobre o local.
+- **Carrinho de Compras**: Possibilidade de adicionar itens ao carrinho, visualizar os itens, remover itens e finalizar a compra.
+- **Sistema de Notificações**: Notificações para ações como adição ou remoção de itens do carrinho.
+- **Navegação Responsiva**: Interface totalmente adaptada para diferentes tamanhos de tela.
+- **Semântica e Acessibilidade**: Uso de tags HTML semânticas e práticas de acessibilidade para garantir uma experiência inclusiva.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologias Utilizadas
 
-### `npm test`
+- **React**: Biblioteca principal para construção da interface do usuário.
+- **Styled-components**: Biblioteca para estilização, permitindo criar componentes de estilo dinâmicos e reutilizáveis.
+- **React Router**: Para navegação entre as páginas do aplicativo.
+- **Context API**: Para gerenciamento de estado, como itens do carrinho e informações do usuário.
+- **React Icons**: Utilizado para ícones, como o ícone de carrinho e perfil.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Estrutura do Projeto
 
-### `npm run build`
+A estrutura de pastas do projeto é organizada da seguinte maneira:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+fastudo/
+├── public/
+│   ├── assets/
+│   │   └── img/
+│   │       ├── banner/
+│   │       ├── foods/
+│   │       └── restaurants/
+│   ├── favicon.png
+│   ├── index.html
+│   └── robots.txt
+├── src/
+│   ├── components/
+│   │   ├── CartPopup.js
+│   │   ├── Container.js
+│   │   ├── FoodCategory.js
+│   │   ├── Header.js
+│   │   ├── Notification.js
+│   │   └── RestaurantCard.js
+│   ├── context/
+│   │   └── NotificationProvider.js
+│   ├── features/
+│   │   ├── Cart/
+│   │   │   ├── CartContext.js
+│   │   │   └── CartProvider.js
+│   │   ├── Checkout/
+│   │   │   └── Checkout.js
+│   │   └── RestaurantDetail/
+│   │       ├── AboutTab.js
+│   │       ├── CategoryTab.js
+│   │       └── ReviewsTab.js
+│   ├── pages/
+│   │   ├── Checkout.js
+│   │   ├── Home.js
+│   │   └── RestaurantDetail.js
+│   ├── services/
+│   │   ├── categoriesData.js
+│   │   ├── restaurantsData.js
+│   │   └── userData.js
+│   ├── styles/
+│   │   ├── GlobalStyles.js
+│   │   └── theme.js
+│   ├── App.js
+│   └── index.js
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Instruções de Instalação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para rodar este projeto em sua máquina local, siga os seguintes passos:
 
-### `npm run eject`
+### Pré-requisitos
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado na versão LTS e o [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/) como gerenciador de pacotes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Passos
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone o repositório:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   git clone https://github.com/fbomateus/fastudo.git
+   cd fastudo
+   ```
 
-## Learn More
+2. Instale as dependências:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Inicie o servidor de desenvolvimento:
 
-### Code Splitting
+   ```bash
+   npm start
+   # ou
+   yarn start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Abra seu navegador e acesse [http://localhost:3000](http://localhost:3000) para visualizar o projeto.
 
-### Analyzing the Bundle Size
+## Funcionalidades em Destaque
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Carrinho de Compras
+- Os itens podem ser adicionados ao carrinho a partir da página de detalhes do restaurante.
+- O usuário pode abrir o `CartPopup` clicando no ícone de carrinho para visualizar ou remover itens.
 
-### Making a Progressive Web App
+### Sistema de Notificações
+- A aplicação inclui um sistema de notificações que avisa os usuários sobre ações, como adição ou remoção de itens do carrinho.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Responsividade
+- A interface se ajusta a diferentes tamanhos de tela, sendo possível ver 4, 3, 2 ou 1 item por linha, dependendo do tamanho do dispositivo.
+- O Header, categorias, e outras seções são otimizadas para visualização em dispositivos móveis e desktop.
 
-### Advanced Configuration
+## Estilização e UI/UX
+- **Styled-components** é utilizado para criar componentes estilizados e garantir que a estilização seja modular e reutilizável.
+- Ícones são gerenciados usando a biblioteca `react-icons` para proporcionar uma experiência visual amigável.
+- A interface é projetada para ser simples e intuitiva, com botões de ação claros e feedback visual.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Como Contribuir
 
-### Deployment
+1. Faça um fork do projeto.
+2. Crie uma branch para sua funcionalidade (`git checkout -b minha-funcionalidade`).
+3. Faça o commit de suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`).
+4. Envie para o branch (`git push origin minha-funcionalidade`).
+5. Abra um Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Contato
 
-### `npm run build` fails to minify
+Caso tenha dúvidas ou queira colaborar, entre em contato:
+- **Email**: fabiomateus.jobs@exemplo.com
+- **GitHub**: [fbomateus](https://github.com/fbomateus)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Sinta-se à vontade para contribuir e tornar o Fastudo ainda melhor!
+
+## Imagens do Projeto
+
+### Página Inicial
+
+![Página Inicial](public/assets/img/home.png)
+
+### Página de Detalhes do Restaurante
+
+![Página de Detalhes do Restaurante](public/assets/img/restaurant_detail.png)
+
+### Página de Checkout
+
+![Página de Checkout](public/assets/img/checkout.png)
