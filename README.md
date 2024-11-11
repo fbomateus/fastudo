@@ -2,6 +2,8 @@
 
 Fastudo é um site de pedidos de restaurantes que permite aos usuários visualizar diferentes restaurantes, seus menus, adicionar itens ao carrinho, e realizar pedidos. Este projeto é construído usando as tecnologias modernas de desenvolvimento web para proporcionar uma ótima experiência ao usuário, tanto em dispositivos móveis quanto em desktop.
 
+**[Acesse o Fastudo](https://fastudo.vercel.app/)**
+
 ## Visão Geral
 
 - **Nome do Projeto**: Fastudo
