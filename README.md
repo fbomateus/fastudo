@@ -46,6 +46,7 @@ fastudo/
 │   │   ├── Container.js
 │   │   ├── FoodCategory.js
 │   │   ├── Header.js
+│   │   ├── Footer.js
 │   │   ├── Notification.js
 │   │   └── RestaurantCard.js
 │   ├── context/
@@ -143,7 +144,7 @@ Certifique-se de ter o [Node.js](https://nodejs.org/) instalado na versão LTS e
 ## Contato
 
 Caso tenha dúvidas ou queira colaborar, entre em contato:
-- **Email**: fabiomateus.jobs@exemplo.com
+- **Email**: fabiomateus.jobs@gmail.com
 - **GitHub**: [fbomateus](https://github.com/fbomateus)
 
 Sinta-se à vontade para contribuir e tornar o Fastudo ainda melhor!
