@@ -14,6 +14,11 @@ const PopupContainer = styled.div`
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
   padding: 15px;
   z-index: 10;
+
+  @media (max-width: 768px) {
+    right: -30px;
+    top: 35px;
+  }
 `;
 
 const CardItemContainer = styled.div`
