@@ -6,11 +6,20 @@ import Checkout from './pages/Checkout';
 import Header from './components/Header';
 import { NotificationProvider } from './context/NotificationProvider';
 import Container from './components/Container';
+import Footer from './components/Footer';
+import styled from 'styled-components';
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
 
 function App() {
   return (
     <NotificationProvider>
       <Router>
+      <AppContainer>
         <Header />
         <Container>
           <Routes>
@@ -19,6 +28,8 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </Container>
+        <Footer />
+        </AppContainer>
       </Router>
     </NotificationProvider>
   );
